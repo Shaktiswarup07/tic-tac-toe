@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;900&family=Kaushan+Script&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #003566;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.5rem;
+}
+h1{
+    color: white;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    height: 100vh;
+    align-items: center;
+}
+#gameBoard{
+    display: flex;
+    flex-wrap: wrap;
+    width: 390px;
+    height: 390px;
+    
+}
+.box{
+    width: 130px;
+    height: 130px;
+    border-right: 2px solid #ffd60a;
+    border-bottom: 2px solid #ffd60a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffd60a;
+
+}
+.winner{
+    background-color: #001d3d;
+}
+.box:nth-child(3n){
+    border-right: none;
+}
+.box:nth-child(6)~ .box{
+    border-bottom: none;
+}
+#restartBtn{
+    padding: 5px 15px;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+#restartBtn:hover{
+    color: white;
+    background-color: rgba(215, 231, 72, 0.192);
+    transform: translate(2px,2px);
+    /* transform: translate(0,20px); */
+}
+.restart{
+    font-weight: bold;
+    animation-name: shake;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+}
+.disable{
+    pointer-events: none;
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
